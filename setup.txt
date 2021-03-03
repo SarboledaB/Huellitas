@@ -4,10 +4,12 @@ PHP 7.4.15
 2.0.9
 
 **package installation**
-$ composer install
+Go to the terminal (you should be placed on the project root directory). Then, run the following commands:
+    $ composer install
 
 **rename /.env.example into /.env**
-$ mv .env.example .env
+Go to the terminal (you should be placed on the project root directory). Then, run the following commands:
+    $ mv .env.example .env
 or do it manually
 
 
@@ -25,17 +27,29 @@ DB_PASSWORD=yourpassword
 
 
 **Make migrations**
-$ php artisan migrate
-
+Go to the terminal (you should be placed on the project root directory). Then, run the following commands:
+    $ php artisan migrate
+It should generate the products table (and other Laravel tables). Examine them in phpMyAdmin the generated table.
+You should get something like this:
+    Migration table created successfully.
+    Migrating: 2014_10_12_100000_create_password_resets_table
+    Migrated:  2014_10_12_100000_create_password_resets_table (39.40ms)
+    Migrating: 2019_08_19_000000_create_failed_jobs_table
+    Migrated:  2019_08_19_000000_create_failed_jobs_table (33.45ms)
+    Migrating: 2021_02_28_000001_create_users_table
+    Migrated:  2021_02_28_000001_create_users_table (18.72ms)
 
 
 **Make seed**
-$ php artisan db:seed
-
+Go to the terminal (you should be placed on the project root directory). Then, run the following commands:
+    $ php artisan db:seed
+It should generate the product “fake” rows (go to your product table and check it)
+You should get something like this:
+    Database seeding completed successfully.
 
 
 **Run project**
-$ php artisan serve
+    $ php artisan serve
 
 ""Go to Home page (Activity 1)**
 http://127.0.0.1:8000/
