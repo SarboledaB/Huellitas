@@ -1,0 +1,52 @@
+**PHP version**
+PHP 7.4.15
+**Composer version**
+2.0.9
+
+**package installation**
+$ composer install
+
+
+**Connect to PhpMyAdmin and create a new database (called tallerLaravel)**
+
+
+**Modify the /.env file with the corresponding database connection values:**
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=tallerLaravel
+DB_USERNAME=user
+DB_PASSWORD=yourpassword
+
+
+
+**Make migrations**
+$ php artisan migrate
+
+
+
+**Make seed**
+$ php artisan db:seed
+
+
+
+**Run project**
+$ php artisan serve
+
+""Go to Home page (Activity 1)**
+http://127.0.0.1:8000/
+
+**Go to Activity 2 clicking on "Create User"**
+
+**Try to create a new user (Activity 3)**
+If you do it properly, you should get a message like: "User created successfully!"
+
+**Go to Activity 4 and 7 clicking on "List Users"**
+You should be able to see all Users sort by Id
+And the first and second one's id should be in bold
+
+**Go to Activity 5 clicking on any user id**
+You should be able to see the user's information
+
+**Go to Activity 6 clicking on "Delete"**
+If you do it properly, you should get a message like: "User deleted successfully!"
