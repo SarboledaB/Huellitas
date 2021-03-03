@@ -17,7 +17,7 @@ class UserController extends Controller
             $data["user"] = $user;
             return view('user.show')->with("data", $data);
         } catch (\Throwable $th) {
-            return back()->with('danger', 'User Id not found!');
+            return redirect()->route('user.list')->with('danger', 'User Id not found!');
         }
     }
 

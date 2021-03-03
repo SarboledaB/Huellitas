@@ -6,6 +6,10 @@ PHP 7.4.15
 **package installation**
 $ composer install
 
+**rename /.env.example into /.env**
+$ mv .env.example .env
+or do it manually
+
 
 **Connect to PhpMyAdmin and create a new database (called tallerLaravel)**
 
