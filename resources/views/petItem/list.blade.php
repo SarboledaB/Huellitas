@@ -16,19 +16,19 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($data["products"] as $product)
+                @foreach($data["petItems"] as $petItem)
                 <tr>
                     @if($loop->iteration <= 2) <th scope="row">
-                        <a href="{{ route('petItem.show', ['id' => $product->getId() ]) }}"> {{ $product->getId() }} </a>
+                        <a href="{{ route('petItem.show', ['id' => $petItem->getId() ]) }}"> {{ $petItem->getId() }} </a>
                         </th>
                         @else
                         <td>
-                            <a href="{{ route('petItem.show', ['id' => $product->getId() ]) }}"> {{ $product->getId() }} </a>
+                            <a href="{{ route('petItem.show', ['id' => $petItem->getId() ]) }}"> {{ $petItem->getId() }} </a>
                         </td>
                         @endif
-                        <td>{{ $product->getName() }}</td>
-                        <td>{{ $product->getValue() }}</td>
-                        <td>{{ $product->getrating() }}</td>
+                        <td>{{ $petItem->getName() }}</td>
+                        <td>{{ $petItem->getValue() }}</td>
+                        <td>{{ $petItem->getrating() }}</td>
                 </tr>
                 @endforeach
             </tbody>

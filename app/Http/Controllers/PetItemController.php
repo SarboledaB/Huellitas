@@ -18,10 +18,10 @@ class PetItemController extends Controller
     {
         try {
             $data = []; //to be sent to the view
-            $PetItem = PetItem::findOrFail($id);
-            $data["title"] = $PetItem->getName();
-            $data["product"] = $PetItem;
-            return view('PetItem.show')->with("data", $data);
+            $petItem = PetItem::findOrFail($id);
+            $data["title"] = $petItem->getName();
+            $data["petItem"] = $petItem;
+            return view('petItem.show')->with("data", $data);
         } catch (\Throwable $th) {
             return back()->with('danger', 'Pet Item not found!');
         }
@@ -31,18 +31,13 @@ class PetItemController extends Controller
     {
         $data = []; //to be sent to the view
         $data["title"] = "Create product";
-        return view('PetItem.create')->with("data", $data);
+        return view('petItem.create')->with("data", $data);
     }
 
     public function save(Request $request)
     {
         try {
-            $request->validate([
-                "name" => "required",
-                "details" => "required",
-                "value" => "required|numeric|gt:0",
-                "rating" => "required|numeric|gt:0"
-            ]);
+            PetItem::validate($request);
             PetItem::create($request->only(["name", "details", "value", "rating"]));
 
             return back()->with('success', 'Pet Item created successfully!');
@@ -51,13 +46,13 @@ class PetItemController extends Controller
         }
     }
 
-    public function list(Request $request)
+    public function list()
     {
         try {
             $data = []; //to be sent to the view
             $data["title"] = "List product";
-            $data["products"] = PetItem::all()->sortBy('id');
-            return view('PetItem.list')->with("data", $data);
+            $data["petItems"] = PetItem::all()->sortBy('id');
+            return view('petItem.list')->with("data", $data);
         } catch (\Throwable $th) {
             return back()->with('danger', 'the list was not found!');
         }

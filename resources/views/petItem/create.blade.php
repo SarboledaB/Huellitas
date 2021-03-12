@@ -26,10 +26,10 @@
                         <input class="form-control" type="text" placeholder="Enter details" name="details" value="{{ old('details') }}" required />
                         <br>
                         <label>Value</label>
-                        <input class="form-control" type="number" placeholder="Enter value" name="value" value="{{ old('value') }}" required />
+                        <input class="form-control" type="number" min="0" placeholder="Enter value" name="value" value="{{ old('value') }}" required />
                         <br>
                         <label>Rating</label>
-                        <input class="form-control" type="number" placeholder="Enter rating" name="rating" value="{{ old('rating') }}" required />
+                        <input class="form-control" type="number" min="0" placeholder="Enter rating" name="rating" value="{{ old('rating') }}" required />
                         <br>
                         <input class="btn btn-primary btn-lg btn-block" type="submit" value="Send" />
                     </form>

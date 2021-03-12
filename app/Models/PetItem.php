@@ -10,12 +10,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class PetItem extends Model
 {
     use HasFactory;
 
-    //attributes id, name, price, created_at, updated_at
+    //attributes id, name, details, value, rating, created_at, updated_at
 
     protected $fillable = [
         'name',
@@ -23,6 +24,16 @@ class PetItem extends Model
         'value',
         'rating'
     ];
+
+    public static function validate(Request $request){
+        $request->validate([
+            "name" => "required",
+            "details" => "required",
+            "value" => "required|numeric|gt:0",
+            "rating" => "required|numeric|gt:0"
+        ]);
+    }
+        
 
     public function getId()
     {
