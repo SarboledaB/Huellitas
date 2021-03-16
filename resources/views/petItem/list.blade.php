@@ -18,17 +18,18 @@
             <tbody>
                 @foreach($data["petItems"] as $petItem)
                 <tr>
-                    @if($loop->iteration <= 2) <th scope="row">
-                        <a href="{{ route('petItem.show', ['id' => $petItem->getId() ]) }}"> {{ $petItem->getId() }} </a>
+                    @if($loop->iteration <= 2) 
+                        <th scope="row">
+                            <a href="{{ route('petItem.show', ['id' => $petItem->getId() ]) }}"> {{ $petItem->getId() }} </a>
                         </th>
-                        @else
+                    @else
                         <td>
                             <a href="{{ route('petItem.show', ['id' => $petItem->getId() ]) }}"> {{ $petItem->getId() }} </a>
                         </td>
-                        @endif
-                        <td>{{ $petItem->getName() }}</td>
-                        <td>{{ $petItem->getValue() }}</td>
-                        <td>{{ $petItem->getrating() }}</td>
+                    @endif
+                    <td>{{ $petItem->getName() }}</td>
+                    <td>{{ $petItem->getValue() }}</td>
+                    <td>{{ $petItem->getrating() }}</td>
                 </tr>
                 @endforeach
             </tbody>
