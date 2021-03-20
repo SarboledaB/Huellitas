@@ -14,12 +14,13 @@ use Illuminate\Http\Request;
 
 class PetItem extends Model
 {
-    use HasFactory;
 
-    //attributes id, name, details, value, rating, created_at, updated_at
+    //attributes id, name, details,category, value, rating, created_at, updated_at
 
     protected $fillable = [
         'name',
+        'category_id',
+        'image',
         'details',
         'value',
         'rating'
@@ -29,6 +30,8 @@ class PetItem extends Model
         $request->validate([
             "name" => "required",
             "details" => "required",
+            "image" => "required",
+            "category_id" => "required|numeric",
             "value" => "required|numeric|gt:0",
             "rating" => "required|numeric|gt:0"
         ]);
@@ -53,6 +56,16 @@ class PetItem extends Model
     public function setName($name)
     {
         $this->attributes['name'] = $name;
+    }
+
+    public function getCategory()
+    {
+        return $this->attributes['category_id'];
+    }
+
+    public function setCategory($category)
+    {
+        $this->attributes['category_id'] = $category;
     }
 
     public function getDetails()

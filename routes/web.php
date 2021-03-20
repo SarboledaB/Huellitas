@@ -31,3 +31,10 @@ Route::get('/petItem/create', 'App\Http\Controllers\PetItemController@create')->
 Route::get('/petItem/list', 'App\Http\Controllers\PetItemController@list')->name("petItem.list");
 Route::post('/petItem/save', 'App\Http\Controllers\PetItemController@save')->name("petItem.save");
 Route::delete('/petItem/delete/{id}', 'App\Http\Controllers\PetItemController@delete')->name("petItem.delete");
+
+//Category Routes
+Route::get('/category/show/{id}', 'App\Http\Controllers\CategoryController@show')->name("category.show");
+Route::get('/category/create', 'App\Http\Controllers\CategoryController@create')->name("category.create");
+Route::get('/category/list', 'App\Http\Controllers\CategoryController@list')->name("category.list");
+Route::post('/category/save', 'App\Http\Controllers\CategoryController@save')->name("category.save");
+Route::delete('/category/delete/{id}', 'App\Http\Controllers\CategoryController@delete')->name("category.delete");

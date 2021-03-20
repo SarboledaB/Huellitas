@@ -23,7 +23,9 @@ class CreatePetItemTable extends Migration
         Schema::create('pet_items', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('name');
+            $table->bigInteger('category_id');
             $table->text('details');
+            $table->text('image');
             $table->double('value');
             $table->integer('rating');
             $table->timestamps();

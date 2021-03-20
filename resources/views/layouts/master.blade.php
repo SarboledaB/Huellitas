@@ -23,11 +23,27 @@
                     <!-- Left Side Of Navbar -->
 
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('petItem.create') }}">Create <span class="sr-only">(current)</span></a>
+                        <li>
+                            <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle">PetItems</a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu2">
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('petItem.create') }}">Create</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('petItem.list') }}">List</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('petItem.list') }}">List <span class="sr-only">(current)</span></a>
+                        <li>
+                            <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle">Categories</a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu1">
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('category.create') }}">Create</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('category.list') }}">List</a>
+                                </li>
+                            </ul>
                         </li>
                         <!-- Future Left Side Links -->
                     </ul>

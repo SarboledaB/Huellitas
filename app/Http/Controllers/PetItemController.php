@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 use App\Models\PetItem;
 
 class PetItemController extends Controller
@@ -31,19 +32,28 @@ class PetItemController extends Controller
     {
         $data = []; //to be sent to the view
         $data["title"] = "Create product";
+        $data["categories"] = $data["petItems"] = Category::all();
         return view('petItem.create')->with("data", $data);
     }
 
     public function save(Request $request)
     {
-        try {
+        /* try { */
             PetItem::validate($request);
-            PetItem::create($request->only(["name", "details", "value", "rating"]));
-
+            /* $category = Category::find($request->category);
+            $dataCategory = [];
+            $dataItems = dump($category->items);
+            foreach ($dataItems as $key => $value) {
+                array_push($dataCategory, $value);
+            }
+            array_push($dataCategory, $request->category);
+            $category->items = $dataCategory;
+            $category->save(); */
+            PetItem::create($request->only(["name", "details", "category_id", "value", "rating"]));
             return back()->with('success', 'Pet Item created successfully!');
-        } catch (\Throwable $th) {
+        /* } catch (\Throwable $th) {
             return back()->with('danger', 'Pet Item was not create!');
-        }
+        } */
     }
 
     public function list()
