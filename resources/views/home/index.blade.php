@@ -8,13 +8,20 @@
                 <div class="card-header">Bienvenido a Huellitas</div>
 
                 <div class="card-body">
-                    
-                    <button type="button" onclick="window.location=
-                    '{{ URL::route('foundations.create') }}'">Agrega una fundación</button>
+                    <b> Admin: </b>
+                    <br>
+                    <button type="button" onclick="window.location=                    
+                    '{{ URL::route('admin.foundations.create') }}'">Agrega una fundación</button>
                     <br>
                     <br>
                     <button type="button" onclick="window.location=
-                    '{{ URL::route('foundations.list') }}'">Fundaciones</button>
+                    '{{ URL::route('admin.foundations.list') }}'">Ver fundaciones</button>
+                    <br>
+                    <br>
+                    <b> User: </b>
+                    <br>
+                    <button type="button" onclick="window.location=
+                    '{{ URL::route('user.foundations.list') }}'">Ver fundaciones</button>
 
                 </div>
             </div>

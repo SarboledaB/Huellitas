@@ -15,7 +15,9 @@
                     <li> {{ $data["foundation"]->getDescription() }} </li>   
                     <br>
                     <button type="button" onclick="window.location=
-                    '{{ URL::route('foundations.delete', ['id'=>$data["foundation"]->getId()]) }}'">Eliminar</button>                                     
+                    '{{ URL::route('admin.foundations.delete', ['id'=>$data["foundation"]->getId()]) }}'">Eliminar</button>
+                    <button type="button" onclick="window.location=
+                    '{{ URL::route('admin.donations.list', ['foundationId'=>$data["foundation"]->getId()]) }}'">Ver donaciones</button>                                                                          
                     </ul>
                 </div>
             </div>

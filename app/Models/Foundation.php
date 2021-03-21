@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
-class Foundations extends Model
+class Foundation extends Model
 {
     use HasFactory;
 
@@ -52,6 +52,11 @@ class Foundations extends Model
     public function setDescription($description)
     {
         $this->attributes['description'] = $description;
+    }
+
+    public function donations() // Relación, una fundación tiene muchas donaciones
+    {
+        return $this->hasMany(Donation::class);
     }
 
     public static function validate(Request $request)

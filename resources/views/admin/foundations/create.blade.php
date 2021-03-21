@@ -18,7 +18,7 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ route('foundations.save') }}">
+                        <form method="POST" action="{{ route('foundations.admin.save') }}">
                             @csrf
                             <input type="text" placeholder="Ingresa el nombre" name="name" value="{{ old('name') }}" />
                             <input type="email" placeholder="Ingresa el email" name="email" value="{{ old('email') }}" />

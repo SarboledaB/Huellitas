@@ -11,11 +11,7 @@
                     Lista de fundaciones
                     <ul id="errors">
                     @foreach($data["foundations"] as $foundations)
-                        @if ($loop->index===0 || $loop->index===1)
-                            <b><a href=" {{route('foundations.show', ['id'=>$foundations->getId()]) }} "><li>{{ $foundations->getId() }} - {{ $foundations->getName() }} : {{ $foundations->getEmail() }}</li></a></b>
-                        @else
-                            <a href=" {{route('foundations.show', ['id'=>$foundations->getId()]) }} "><li>{{ $foundations->getId() }} - {{ $foundations->getName() }} : {{ $foundations->getEmail() }}</li></a>
-                        @endif                    
+                        <a href=" {{route('user.foundations.show', ['id'=>$foundations->getId()]) }} "><li>{{ $foundations->getName() }} : {{ $foundations->getDescription() }}</li></a>                  
                     @endforeach
                     </ul>
                 </div>
